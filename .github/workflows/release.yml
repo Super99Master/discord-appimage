@@ -22,6 +22,11 @@ jobs:
     - name: Download Discord
       run: |
         wget -qO - "https://discord.com/api/download?platform=linux&format=tar.gz" | tar -xz -C .
+        mv ./Discord ./Discord_Updater
+        mkdir ./worktabke
+        chmod +x ./Discord_Updater/updater_bootstrap
+        ./Discord_Updater/updater_bootstrap --no-zenity  ./worktable stable https://updates.discord.com/
+        mv ./worktable/app-* ./Discord
 
     - name: Patch to include files
       run: |
