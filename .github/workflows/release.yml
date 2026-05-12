@@ -40,7 +40,7 @@ jobs:
         sudo apt install libfuse2 -y
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ARCH=x86_64 ./appimagetool-x86_64.AppImage ./Discord -n -u 'gh-releases-zsync|srevinsaju|discord-appimage|stable|Discord*.AppImage.zsync' Discord-$(cat Discord/resources/build_info.json | jq -r .version)-x86_64.AppImage
+        ARCH=x86_64 ./appimagetool-x86_64.AppImage ./Discord -n -u 'gh-releases-zsync|Super99Master|discord-appimage|stable|Discord*.AppImage.zsync' Discord-$(cat Discord/resources/build_info.json | jq -r .version)-x86_64.AppImage
         mkdir dist
         mv Discord*.AppImage dist/.
         mv *.zsync dist/.
