@@ -42,6 +42,10 @@ isEulaAccepted=1
 VERSION=$(cat "$APPDIR"/resources/build_info.json | jq -r .version)
 echo "$VERSION"
 
+if [ "$XDG_CONFIG_HOME" = "" ]; then
+    XDG_CONFIG_HOME="$HOME"/.config
+fi
+
 mkdir -p "$XDG_CONFIG_HOME"/discord/"$VERSION"/modules/
 
 #adding modules from build to .config
